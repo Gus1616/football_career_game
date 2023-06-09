@@ -6,7 +6,7 @@
     <h1>Guess the Player</h1>
     </div>
 
-    {{ countDown }}
+    <div class="timer">Timer: {{ countDown }}</div>
 
 </template>
 
@@ -14,7 +14,7 @@
  export default {
         data () {
             return {
-                countDown: 10
+                countDown: 25
             }
         },
         methods: {
@@ -24,6 +24,9 @@
                         this.countDown -= 1
                         this.countDownTimer()
                     }, 1000)
+                }
+                if (this.countDown==0){
+                    this.$router.push('/')
                 }
             }
         },
@@ -37,6 +40,16 @@
 
 
 <style>
+
+.timer {
+  position: absolute;
+  top: 5%;
+  right: 5px;
+  font-size: 30px;
+  color: crimson;
+  border: 4px solid red;
+
+}
 
 
 .nav {
