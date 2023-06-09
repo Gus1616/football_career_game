@@ -1,19 +1,20 @@
 <template>
+  <img alt="Vue logo" src="@/assets/football_quiz.png" class="logo" width="300" height="200">
+
+  <!-- <HomePage msg="The Football Quiz"/> -->
   <router-view/>
-  <img alt="Vue logo" src="./assets/football_quiz.png" class="logo" width="300" height="200">
-  <HomePage msg="The Football Quiz"/>
 
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue'
+// import HomePage from './components/pages/HomePage.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HomePage
-  }
-}
+// export default {
+//   name: 'App',
+//   components: {
+//     HomePage
+//   }
+// }
 </script>
 
 <style>

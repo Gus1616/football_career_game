@@ -5,10 +5,10 @@ import MainPage from '../components/pages/MainPage.vue'
 
 const routes = [
     {path: '/',
-    componenet: HomePage
+    component: HomePage
     },
     {path: '/MainPage',
-    componenet: MainPage
+    component: MainPage
     }
 ]
 

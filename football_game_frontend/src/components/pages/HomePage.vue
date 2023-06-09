@@ -5,7 +5,7 @@
     <h3>Guess the Player from their career path</h3>
 
 
-    <router-link to="/new-page">
+    <router-link to="/MainPage">
 
     <button @click="goToNewPage" class="glow-on-hover" type="button">Start Game!</button>
 
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
   goToNewPage() {
-    this.$router.push('/new-page')
+    this.$router.push('/MainPage')
   }
 }
 }
