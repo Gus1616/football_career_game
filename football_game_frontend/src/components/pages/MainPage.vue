@@ -5,7 +5,7 @@
         </button>
     <h1>Guess the Player</h1>
     </div>
-    <input v-model="message" placeholder="enter player name..." />
+    <input placeholder="enter player name..." />
 
     <div class="timer">Timer: {{ countDown }} </div>
 
@@ -18,10 +18,14 @@
 </template>
 
 <script>
+
+import axios from 'axios';
+
+
  export default {
         data () {
             return {
-                countDown: 40
+                countDown: 90
             }
         },
         methods: {
@@ -38,7 +42,16 @@
             }
         },
         created () {
-            this.countDownTimer()
+            this.countDownTimer(),
+            axios.get('http://localhost:8000/careerApp/load-json/')
+            .then(response => {
+                // this.message = response.data.message;
+                console.log(response)
+            })
+            .catch(error => {
+                console.error(error);
+            });
+                    
         }
     }
 
