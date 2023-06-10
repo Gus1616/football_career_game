@@ -5,12 +5,15 @@
         </button>
     <h1>Guess the Player</h1>
     </div>
+    <input v-model="message" placeholder="enter player name..." />
 
     <div class="timer">Timer: {{ countDown }} </div>
 
     <div class="container">
   <div class="square"></div>
+
 </div>
+
 
 </template>
 
