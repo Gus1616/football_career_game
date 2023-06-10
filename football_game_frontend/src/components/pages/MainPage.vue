@@ -6,7 +6,11 @@
     <h1>Guess the Player</h1>
     </div>
 
-    <div class="timer">Timer: {{ countDown }}</div>
+    <div class="timer">Timer: {{ countDown }} </div>
+
+    <div class="container">
+  <div class="square"></div>
+</div>
 
 </template>
 
@@ -14,7 +18,7 @@
  export default {
         data () {
             return {
-                countDown: 25
+                countDown: 40
             }
         },
         methods: {
@@ -40,6 +44,25 @@
 
 
 <style>
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.square {
+    /* display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 45%; */
+    width: 250px;
+    height: 350px;
+    border: 3px solid black;
+
+
+}
 
 .timer {
   position: absolute;
