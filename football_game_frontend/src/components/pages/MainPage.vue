@@ -10,8 +10,15 @@
     <div class="timer">Timer: {{ countDown }} </div>
 
     <div class="container">
-  <div class="square"></div>
+  <div class="square">
+    {{ gareth }}
+  </div>
+  
 
+</div>
+<div>
+    <a class="back" href="#">&laquo; Back</a>
+    <a class="back" href="#">Next &raquo;</a>
 </div>
 
 
@@ -25,7 +32,8 @@ import axios from 'axios';
  export default {
         data () {
             return {
-                countDown: 90
+                countDown: 90,
+                gareth: null
             }
         },
         methods: {
@@ -46,7 +54,8 @@ import axios from 'axios';
             axios.get('http://localhost:8000/careerApp/load-json/')
             .then(response => {
                 // this.message = response.data.message;
-                console.log(response)
+                console.log("hello"+ response.data.data.Gareth_Barry)
+                this.gareth = response.data.data.Gareth_Barry
             })
             .catch(error => {
                 console.error(error);
@@ -60,6 +69,23 @@ import axios from 'axios';
 
 
 <style>
+.back{
+   text-decoration: none;
+   color: white;
+   background: #dc3545;
+   padding: 7px 10px;
+   border-radius: 4px;  
+   font-size: 19px;
+   margin-right: 3px;
+
+}
+.back:hover{
+   background: rgb(220 53 69 / 85%);
+}
+.back:focus{
+    outline: 3px solid rgb(220 53 69 / 50%);
+   
+}
 
 .container {
   display: flex;
@@ -76,6 +102,7 @@ import axios from 'axios';
     width: 250px;
     height: 350px;
     border: 3px solid black;
+    border-radius: 10px 10px 10px 10px;
 
 
 }
