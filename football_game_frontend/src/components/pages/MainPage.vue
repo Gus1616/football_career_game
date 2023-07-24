@@ -1,7 +1,7 @@
 <template>
     <div>
         <button class="nav">
-            <router-link to="/">Home</router-link>
+            <router-link style="   text-decoration: none;" to="/">Home</router-link>
         </button>
     <h1>Guess the Player</h1>
     </div>
@@ -11,7 +11,7 @@
 
     <div class="container">
   <div class="square">
-    {{ gareth }}
+    <pre>{{ gareth }}</pre>
   </div>
   
 
@@ -54,8 +54,9 @@ import axios from 'axios';
             axios.get('http://localhost:8000/careerApp/load-json/')
             .then(response => {
                 // this.message = response.data.message;
-                console.log("hello"+ response.data.data.Gareth_Barry)
-                this.gareth = response.data.data.Gareth_Barry
+                console.log("hello "+ response.data.data.Gareth_Barry)
+
+                this.gareth = JSON.stringify(response.data.data.Gareth_Barry, null, 2)
             })
             .catch(error => {
                 console.error(error);
@@ -77,6 +78,7 @@ import axios from 'axios';
    border-radius: 4px;  
    font-size: 19px;
    margin-right: 3px;
+   margin-bottom: 10px;
 
 }
 .back:hover{
@@ -100,7 +102,7 @@ import axios from 'axios';
   align-items: center;
   margin-left: 45%; */
     width: 250px;
-    height: 350px;
+    height: 450px;
     border: 3px solid black;
     border-radius: 10px 10px 10px 10px;
 
@@ -119,13 +121,20 @@ import axios from 'axios';
 
 
 .nav {
-  background-color: white;
-  color: black;
-  border: 2px solid #4CAF50; /* Green */
+   text-decoration: none;
+   color: white;
+   background: #dc3545;
+   padding: 7px 10px;
+   border-radius: 4px;  
+   font-size: 19px;
   margin-top: 20px;
 }
 .nav:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+pre {
+  white-space: pre-wrap;
 }
 
 </style>
