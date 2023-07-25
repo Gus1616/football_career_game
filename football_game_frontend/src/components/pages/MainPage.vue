@@ -19,7 +19,7 @@
 <div>
     <a @click="backButton" :disabled="total > 0" class="back" href="#" >&laquo; Back</a>
     <a @click="nextButton" :disabled="total < 19" class="back" href="#">Next &raquo;</a>
-    <p>Total: {{ total }}</p>
+    <!-- <p>Total: {{ total }}</p> -->
 
 </div>
 
@@ -48,7 +48,7 @@ import axios from 'axios';
                 if (this.total < 19) {
 
                     this.total += 1;
-                    console.log(this.players[1])
+                    // console.log(this.players[1])
                     this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
                 }
             },
@@ -76,7 +76,7 @@ import axios from 'axios';
             axios.get('http://localhost:8000/careerApp/load-json/')
             .then(response => {
                 // this.message = response.data.message;
-                console.log("hello "+ response.data.data.Gareth_Barry)
+                // console.log("hello "+ response.data.data.Gareth_Barry)
                 this.holdData =response.data.data
                 this.gareth = JSON.stringify(response.data.data.Gareth_Barry, null, 2)
             })
