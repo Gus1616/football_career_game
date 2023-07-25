@@ -17,8 +17,10 @@
 
 </div>
 <div>
-    <a class="back" href="#">&laquo; Back</a>
-    <a class="back" href="#">Next &raquo;</a>
+    <a @click="backButton" :disabled="total > 0" class="back" href="#" >&laquo; Back</a>
+    <a @click="nextButton" :disabled="total < 19" class="back" href="#">Next &raquo;</a>
+    <p>Total: {{ total }}</p>
+
 </div>
 
 
@@ -33,10 +35,30 @@ import axios from 'axios';
         data () {
             return {
                 countDown: 90,
-                gareth: null
+                gareth: null,
+                total: 0,
+                holdData: null,
+                players : ['Gareth_Barry', 'Ryan_Giggs', 'Frank_Lampard', 'David_James_(footballer,_born_1970)', 'Gary_Speed', 'Emile_Heskey', 'Mark_Schwarzer', 'Sol_Campbell', 'James_Milner', 'Phil_Neville', 'Jamie_Carragher', 'Steven_Gerrard', 'Paul_Scholes', 'Rio_Ferdinand', 'Wayne_Rooney', 'John_Terry', 'Ashley_Cole', 'David_Silva', 'Petr_Čech', 'Cesc_Fàbregas']
+
+
             }
         },
         methods: {
+            nextButton() {
+                if (this.total < 19) {
+
+                    this.total += 1;
+                    console.log(this.players[1])
+                    this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
+                }
+            },
+            backButton() {
+                if (this.total > 0) {
+                    this.total -= 1;
+                    this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
+                }
+
+            },
             countDownTimer () {
                 if (this.countDown > 0) {
                     setTimeout(() => {
@@ -55,7 +77,7 @@ import axios from 'axios';
             .then(response => {
                 // this.message = response.data.message;
                 console.log("hello "+ response.data.data.Gareth_Barry)
-
+                this.holdData =response.data.data
                 this.gareth = JSON.stringify(response.data.data.Gareth_Barry, null, 2)
             })
             .catch(error => {
