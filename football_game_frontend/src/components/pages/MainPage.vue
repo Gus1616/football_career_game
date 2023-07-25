@@ -90,6 +90,10 @@ import axios from 'axios';
 
                 if (newInput === stringRepresentation) {
                     this.totalScore += 1;
+                    this.total += 1;
+                    this.inputText = "";
+                    // console.log(this.players[this.total])
+                    this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
                 }
                 },
          },
