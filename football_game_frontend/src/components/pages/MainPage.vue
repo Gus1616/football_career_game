@@ -5,9 +5,15 @@
         </button>
     <h1>Guess the Player</h1>
     </div>
-    <input placeholder="enter player name..." />
+    <input type="text" v-model="inputText" placeholder="enter player name..." />
+    <!-- <p >{{ inputText }}</p> -->
 
-    <div class="timer">Timer: {{ countDown }} </div>
+    <div class="timer">
+        <div>Timer: {{ countDown }} </div>
+        <div>Total Score: {{ totalScore }} </div>
+
+    </div>
+
 
     <div class="container">
   <div class="square">
@@ -34,6 +40,9 @@ import axios from 'axios';
  export default {
         data () {
             return {
+                inputText: "",
+                totalScore: 0,
+
                 countDown: 90,
                 gareth: null,
                 total: 0,
@@ -48,8 +57,9 @@ import axios from 'axios';
                 if (this.total < 19) {
 
                     this.total += 1;
-                    // console.log(this.players[1])
+                    console.log(this.players[this.total])
                     this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
+                    
                 }
             },
             backButton() {
@@ -71,6 +81,18 @@ import axios from 'axios';
                 }
             }
         },
+        watch: {
+                inputText(newInput) {
+                this.displayedText = newInput;
+                let stringRepresentation = this.players[this.total].toString();
+                console.log("thisss string " + stringRepresentation)
+
+
+                if (newInput === stringRepresentation) {
+                    this.totalScore += 1;
+                }
+                },
+         },
         created () {
             this.countDownTimer(),
             axios.get('http://localhost:8000/careerApp/load-json/')
