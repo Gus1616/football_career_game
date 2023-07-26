@@ -1,6 +1,6 @@
 # football_career_game
 
-<p>A guessing game whereby users have to guess the soccer players names based on their career path.</p>
+<p>A guessing game whereby users have to guess the soccer players names based on their career path. The user has 90 seconds to get as many players names as possible.</p>
 
 <p>Data scraped from wikipedia using python package Beautiful soup</p>
 
