@@ -20,21 +20,19 @@
 
 
     <div class="container">
-  <div class="square">
-    <!-- <pre>{{ gareth }}</pre> -->
-    <p v-html="gareth"></p>
-    
-
-  </div>
+            <div class="square">
+                <!-- <pre>{{ gareth }}</pre> -->
+                <p v-html="gareth"></p>
+            </div>
   
 
-</div>
-<div>
-    <a @click="backButton" :disabled="total > 0" class="back" href="#" >&laquo; Back</a>
-    <a @click="nextButton" :disabled="total < 19" class="back" href="#">Next &raquo;</a>
-    <!-- <p>Total: {{ total }}</p> -->
+    </div>
+    <div>
+        <a @click="backButton" :disabled="total > 0" class="back" href="#" >&laquo; Back</a>
+        <a @click="nextButton" :disabled="total < 19" class="back" href="#">Next &raquo;</a>
+        <!-- <p>Total: {{ total }}</p> -->
 
-</div>
+    </div>
 
 
 </template>
@@ -187,7 +185,6 @@ import axios from 'axios';
   top: 5%;
   right: 5px;
   font-size: 30px;
-  color: crimson;
 
 }
 
@@ -223,11 +220,22 @@ pre {
 
 .timerDiv{
     border: 4px solid red;
+    padding: 2px;
+    border-radius:5px;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+
+
 
 }
 
 .ScoreDiv{
-    border: 4px solid red;
+    border: 4px solid green;
+    border-radius:5px;
+    padding: 2px;
+    margin-top: 12px;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+
+
 
 }
 
