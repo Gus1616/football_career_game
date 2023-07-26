@@ -1,0 +1,16 @@
+# football_career_game
+
+<p>A guessing game whereby users have to guess the soccer players names based on their career path.</p>
+
+<p>Data scraped from wikipedia using python package Beautiful soup</p>
+
+<p>Djano REST used as backend</p>
+
+<p>Vue JS used as frontend</p>
+
+
+
+
+
+
+![image](https://github.com/Gus1616/football_career_game/assets/90276026/11d2d157-b756-4296-817c-f00c6d45a398)
