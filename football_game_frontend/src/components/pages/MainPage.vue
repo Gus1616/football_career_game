@@ -1,11 +1,11 @@
 <template>
     <div>
         <button class="nav">
-            <router-link style="   text-decoration: none;" to="/">Home</router-link>
+            <router-link class="routerLink" style="text-decoration: none;" to="/">Home</router-link>
         </button>
     <h1>Guess the Player</h1>
     </div>
-    <input type="text" v-model="inputText" placeholder="enter player name..." />
+    <input class="inputBox" type="text" v-model="inputText" placeholder="enter player name..." />
     <!-- <p >{{ inputText }}</p> -->
 
     <div class="timer">
@@ -188,6 +188,10 @@ import axios from 'axios';
 
 }
 
+.routerLink{
+    text-decoration: none;
+    color: white;
+}
 
 .nav {
    text-decoration: none;
@@ -204,6 +208,15 @@ import axios from 'axios';
 
 pre {
   white-space: pre-wrap;
+}
+
+.inputBox{
+    box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+    border-radius:10px;
+    padding:4px;
+
+
+
 }
 
 </style>
