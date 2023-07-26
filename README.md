@@ -14,3 +14,14 @@
 
 
 ![image](https://github.com/Gus1616/football_career_game/assets/90276026/11d2d157-b756-4296-817c-f00c6d45a398)
+
+
+
+
+
+
+
+
+
+
+![image](https://github.com/Gus1616/football_career_game/assets/90276026/38d5ec2b-ccf1-4490-a6ed-c6b1dd0e04f4)
