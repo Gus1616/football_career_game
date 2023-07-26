@@ -19,7 +19,7 @@
 
 
 
-<p>In-game page:</p>
+<p>In-game Page:</p>
 
 
 
