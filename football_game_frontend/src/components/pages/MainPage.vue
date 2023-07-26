@@ -17,7 +17,10 @@
 
     <div class="container">
   <div class="square">
-    <pre>{{ gareth }}</pre>
+    <!-- <pre>{{ gareth }}</pre> -->
+    <p v-html="gareth"></p>
+    
+
   </div>
   
 
@@ -60,9 +63,11 @@ import axios from 'axios';
                     // console.log(this.players[this.total])
                     let jsonData = this.holdData[this.players[this.total]]
                     let newVarrr = jsonData.map((item) => item.replace(/\[\d+\]/g, ""));
-                    console.log("hello json data "+jsonData)
+                    // console.log("hello json data "+jsonData)
+                    newVarrr =  newVarrr.join("<br>");
+
                     
-                    this.gareth = JSON.stringify(newVarrr, null, 2)
+                    this.gareth = newVarrr
                     // this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
                     
                 }
@@ -72,8 +77,10 @@ import axios from 'axios';
                     this.total -= 1;
                     let jsonData = this.holdData[this.players[this.total]]
                     let newVarrr = jsonData.map((item) => item.replace(/\[\d+\]/g, ""));
+                    newVarrr =  newVarrr.join("<br>");
+
                     
-                    this.gareth = JSON.stringify(newVarrr, null, 2)
+                    this.gareth = newVarrr
                 }
 
             },
@@ -114,11 +121,11 @@ import axios from 'axios';
                 this.holdData =response.data.data
                 let jsonDataa = response.data.data.Gareth_Barry
                 let newVar = jsonDataa.map((item) => item.replace(/\[\d+\]/g, ""));
-                // newVar =  newVar.join(", ");
-                console.log(newVar)
+                newVar =  newVar.join("<br>");
+                // console.log(newVar)
 
                 
-                this.gareth = JSON.stringify(newVar, null, 2)
+                this.gareth = newVar
             })
             .catch(error => {
                 console.error(error);
