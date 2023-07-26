@@ -1,4 +1,4 @@
-# football_career_game
+# football career game
 
 <p>A guessing game whereby users have to guess the soccer players names based on their career path. The user has 90 seconds to get as many players names as possible.</p>
 
@@ -9,6 +9,7 @@
 <p>Vue JS used as frontend</p>
 
 
+<p>Home Page:</p>
 
 
 
@@ -18,6 +19,7 @@
 
 
 
+<p>In-game page:</p>
 
 
 
