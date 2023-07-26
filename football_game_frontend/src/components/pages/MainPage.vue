@@ -9,8 +9,12 @@
     <!-- <p >{{ inputText }}</p> -->
 
     <div class="timer">
-        <div>Timer: {{ countDown }} </div>
-        <div>Total Score: {{ totalScore }} </div>
+        <div class="timerDiv">
+            <div>Timer: {{ countDown }} </div>
+        </div>
+        <div class="ScoreDiv">
+            <div>Total Score: {{ totalScore }} </div>
+        </div>
 
     </div>
 
@@ -184,7 +188,6 @@ import axios from 'axios';
   right: 5px;
   font-size: 30px;
   color: crimson;
-  border: 4px solid red;
 
 }
 
@@ -216,6 +219,15 @@ pre {
     padding:4px;
 
 
+}
+
+.timerDiv{
+    border: 4px solid red;
+
+}
+
+.ScoreDiv{
+    border: 4px solid red;
 
 }
 
