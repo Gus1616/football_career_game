@@ -57,15 +57,23 @@ import axios from 'axios';
                 if (this.total < 19) {
 
                     this.total += 1;
-                    console.log(this.players[this.total])
-                    this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
+                    // console.log(this.players[this.total])
+                    let jsonData = this.holdData[this.players[this.total]]
+                    let newVarrr = jsonData.map((item) => item.replace(/\[\d+\]/g, ""));
+                    console.log("hello json data "+jsonData)
+                    
+                    this.gareth = JSON.stringify(newVarrr, null, 2)
+                    // this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
                     
                 }
             },
             backButton() {
                 if (this.total > 0) {
                     this.total -= 1;
-                    this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
+                    let jsonData = this.holdData[this.players[this.total]]
+                    let newVarrr = jsonData.map((item) => item.replace(/\[\d+\]/g, ""));
+                    
+                    this.gareth = JSON.stringify(newVarrr, null, 2)
                 }
 
             },
@@ -104,7 +112,13 @@ import axios from 'axios';
                 // this.message = response.data.message;
                 // console.log("hello "+ response.data.data.Gareth_Barry)
                 this.holdData =response.data.data
-                this.gareth = JSON.stringify(response.data.data.Gareth_Barry, null, 2)
+                let jsonDataa = response.data.data.Gareth_Barry
+                let newVar = jsonDataa.map((item) => item.replace(/\[\d+\]/g, ""));
+                // newVar =  newVar.join(", ");
+                console.log(newVar)
+
+                
+                this.gareth = JSON.stringify(newVar, null, 2)
             })
             .catch(error => {
                 console.error(error);
