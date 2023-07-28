@@ -183,7 +183,7 @@ import axios from 'axios';
 .timer {
   position: absolute;
   top: 5%;
-  right: 5px;
+  right: 40px;
   font-size: 30px;
 
 }
@@ -214,6 +214,8 @@ pre {
     box-shadow:4px 4px 10px rgba(0,0,0,0.06);
     border-radius:10px;
     padding:4px;
+    height: 25px;
+    width: 350px;
 
 
 }

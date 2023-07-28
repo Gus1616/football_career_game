@@ -9,9 +9,16 @@
 
     <button @click="goToNewPage" class="glow-on-hover" type="button">Start Game!</button>
 
+
+
   </router-link>
 
+
+
   </div>
+
+  <h4>Current high score is: {{ score }}</h4>
+
 </template>
 
 <script>
