@@ -6,7 +6,6 @@
     <h1>Guess the Player</h1>
     </div>
     <input class="inputBox" type="text" v-model="inputText" placeholder="enter player name..." />
-    <!-- <p >{{ inputText }}</p> -->
 
     <div class="timer">
         <div class="timerDiv">
@@ -16,6 +15,10 @@
             <div>Total Score: {{ totalScore }} </div>
         </div>
 
+    </div>
+
+    <div>
+    <button @click="sendDataToSibling">Send Data to Sibling</button>
     </div>
 
 
@@ -41,7 +44,6 @@
 
 import axios from 'axios';
 
-
  export default {
         data () {
             return {
@@ -58,6 +60,7 @@ import axios from 'axios';
             }
         },
         methods: {
+            
             nextButton() {
                 if (this.total < 19) {
 
@@ -119,9 +122,10 @@ import axios from 'axios';
                 score(newScore) {
                         // Save the score to the browser's local storage whenever it changes
                         localStorage.setItem('gameScore', newScore);
+                        console.log("Emitted newscore: "+ newScore)
+
                         // Emit the custom event with the score value
                         this.$emit('score-updated', newScore);
-                        console.log("Emitted newscore: "+ newScore)
             },
          },
         created () {
