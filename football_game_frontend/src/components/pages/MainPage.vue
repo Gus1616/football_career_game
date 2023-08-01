@@ -43,6 +43,8 @@
 <script>
 
 import axios from 'axios';
+import { useStore } from 'vuex';
+
 
  export default {
         data () {
@@ -58,6 +60,18 @@ import axios from 'axios';
 
 
             }
+        },
+        setup() {
+                const store = useStore();
+
+                const sendDataToSibling = () => {
+                const data = 'Data from Child 1';
+                store.commit('updateData', data);
+                };
+
+                return {
+                sendDataToSibling,
+                };
         },
         methods: {
             

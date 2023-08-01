@@ -18,12 +18,14 @@
   </div>
 
   <h4>Current high score is: {{ score }}</h4>
-  <!-- <MainPage/> -->
-
+  <div>
+    <h2>{{ receivedData }}</h2>
+  </div>
 </template>
 
 <script>
 
+import { useStore } from 'vuex';
 
 
 export default {
@@ -33,6 +35,13 @@ export default {
   },
   components:{
     // MainPage
+  },
+  setup() {
+    const store = useStore();
+
+    return {
+      receivedData: store.state.data,
+    };
   },
   data() {
     return {
