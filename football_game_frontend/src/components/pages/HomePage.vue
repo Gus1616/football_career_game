@@ -18,19 +18,35 @@
   </div>
 
   <h4>Current high score is: {{ score }}</h4>
+  <!-- <MainPage/> -->
 
 </template>
 
 <script>
+
+
+
 export default {
   name: 'HomePage',
   props: {
     msg: String
   },
+  components:{
+    // MainPage
+  },
+  data() {
+    return {
+      currentScore: 0,
+    };
+  },
+  computed: {
+    // ...mapState(['score']),
+  },
   methods: {
   goToNewPage() {
     this.$router.push('/MainPage')
-  }
+  },
+
 }
 }
 </script>

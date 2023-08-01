@@ -98,21 +98,31 @@ import axios from 'axios';
                 }
             }
         },
+        computed: {
+        },
         watch: {
                 inputText(newInput) {
                 this.displayedText = newInput;
                 let stringRepresentation = this.players[this.total].toString();
-                console.log("thisss string " + stringRepresentation)
+                // console.log("thisss string " + stringRepresentation)
 
 
                 if (newInput === stringRepresentation) {
                     this.totalScore += 1;
                     this.total += 1;
                     this.inputText = "";
+
                     // console.log(this.players[this.total])
                     this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
                 }
                 },
+                score(newScore) {
+                        // Save the score to the browser's local storage whenever it changes
+                        localStorage.setItem('gameScore', newScore);
+                        // Emit the custom event with the score value
+                        this.$emit('score-updated', newScore);
+                        console.log("Emitted newscore: "+ newScore)
+            },
          },
         created () {
             this.countDownTimer(),
@@ -133,8 +143,9 @@ import axios from 'axios';
                 console.error(error);
             });
                     
-        }
-    }
+        },
+
+}
 
 
 </script>
