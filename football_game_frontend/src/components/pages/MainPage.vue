@@ -17,9 +17,7 @@
 
     </div>
 
-    <div>
-    <button @click="sendDataToSibling">Send Data to Sibling</button>
-    </div>
+    
 
 
     <div class="container">
@@ -138,6 +136,10 @@ import { useStore } from 'vuex';
                     this.totalScore += 1;
                     this.total += 1;
                     this.inputText = "";
+                    //                 const store = useStore();
+                    // store.commit('updateData', this.totalScore);
+
+
                     this.$store.commit('updateData', this.totalScore);
 
 
