@@ -6,7 +6,7 @@
 
 <p>Djano REST used as backend</p>
 
-<p>Vue JS used as frontend</p>
+<p>Vue JS used as frontend - Vuex is used to transfer information between components on the front end</p>
 
 
 <p>Home Page:</p>
