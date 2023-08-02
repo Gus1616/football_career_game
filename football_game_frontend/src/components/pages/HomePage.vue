@@ -17,7 +17,7 @@
 
   </div>
 
-  <h4>Current high score: {{ receivedData }}</h4>
+  <h4 v-if="receivedData !== ''">Current high score: {{ receivedData }}</h4>
  
 </template>
 
