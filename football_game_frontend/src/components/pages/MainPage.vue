@@ -65,7 +65,7 @@ import { useStore } from 'vuex';
                 const store = useStore();
 
                 const sendDataToSibling = () => {
-                const data = 'Data from Child 1';
+                const data = this.score ;
                 store.commit('updateData', data);
                 };
 
@@ -74,6 +74,16 @@ import { useStore } from 'vuex';
                 };
         },
         methods: {
+            loadFinalScore() {
+      const finalScore = localStorage.getItem('finalScore');
+      if (finalScore) {
+        this.totalScore = parseInt(finalScore);
+      }
+    },
+    saveFinalScore() {
+      localStorage.setItem('finalScore', this.totalScore);
+      console.log("saving final score ", this.totalScore)
+    },
             
             nextButton() {
                 if (this.total < 19) {
@@ -128,6 +138,8 @@ import { useStore } from 'vuex';
                     this.totalScore += 1;
                     this.total += 1;
                     this.inputText = "";
+                    this.$store.commit('updateData', this.totalScore);
+
 
                     // console.log(this.players[this.total])
                     this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
@@ -160,8 +172,18 @@ import { useStore } from 'vuex';
             .catch(error => {
                 console.error(error);
             });
+            
+
+            this.loadFinalScore();
+             window.addEventListener('beforeunload', this.saveFinalScore);
                     
         },
+        beforeUnmount() {
+    window.removeEventListener('beforeunload', this.saveFinalScore);
+  },
+
+        
+
 
 }
 

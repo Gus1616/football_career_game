@@ -17,10 +17,8 @@
 
   </div>
 
-  <h4>Current high score is: {{ score }}</h4>
-  <div>
-    <h2>{{ receivedData }}</h2>
-  </div>
+  <h4>Current high score: {{ receivedData }}</h4>
+ 
 </template>
 
 <script>
