@@ -14,7 +14,7 @@
 
 
 
-![image](https://github.com/Gus1616/football_career_game/assets/90276026/59bbb9bd-a47f-472f-a99e-5d3246cc2694)
+![image](https://github.com/Gus1616/football_career_game/assets/90276026/ebe3ea8c-8f49-4b8e-801f-1c987b5c45bd)
 
 
 
