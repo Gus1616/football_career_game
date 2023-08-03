@@ -93,7 +93,6 @@ import { useStore } from 'vuex';
                     // console.log("hello json data "+jsonData)
                     newVarrr =  newVarrr.join("<br>");
 
-                    
                     this.gareth = newVarrr
                     // this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
                     
@@ -136,15 +135,22 @@ import { useStore } from 'vuex';
                     this.totalScore += 1;
                     this.total += 1;
                     this.inputText = "";
-                    //                 const store = useStore();
-                    // store.commit('updateData', this.totalScore);
+               
 
 
                     this.$store.commit('updateData', this.totalScore);
 
 
                     // console.log(this.players[this.total])
-                    this.gareth = JSON.stringify(this.holdData[this.players[this.total]], null, 2)
+
+                    let jsonData = this.holdData[this.players[this.total]]
+                    let newVarrr = jsonData.map((item) => item.replace(/\[\d+\]/g, ""));
+                    // console.log("hello json data "+jsonData)
+                    newVarrr =  newVarrr.join("<br>");
+
+                    
+                    this.gareth = newVarrr
+                    
                 }
                 },
                 score(newScore) {
