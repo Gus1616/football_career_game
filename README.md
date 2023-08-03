@@ -6,7 +6,7 @@
 
 <p>Djano REST used as backend</p>
 
-<p>Vue JS used as frontend</p>
+<p>Vue JS used as frontend - Vuex is used to transfer information between components on the front end</p>
 
 
 <p>Home Page:</p>
@@ -14,7 +14,7 @@
 
 
 
-![image](https://github.com/Gus1616/football_career_game/assets/90276026/11d2d157-b756-4296-817c-f00c6d45a398)
+![image](https://github.com/Gus1616/football_career_game/assets/90276026/59bbb9bd-a47f-472f-a99e-5d3246cc2694)
 
 
 
@@ -26,4 +26,4 @@
 
 
 
-![image](https://github.com/Gus1616/football_career_game/assets/90276026/38d5ec2b-ccf1-4490-a6ed-c6b1dd0e04f4)
+![image](https://github.com/Gus1616/football_career_game/assets/90276026/1ca6fdb7-68a2-42f2-88ed-d3d93e534a83)
