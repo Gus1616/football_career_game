@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="nav">
+        <button @click="homeClick"  class="nav">
             <router-link class="routerLink" style="text-decoration: none;" to="/">Home</router-link>
         </button>
     <h1>Guess the Player</h1>
@@ -71,6 +71,9 @@ import { useStore } from 'vuex';
                 };
         },
         methods: {
+            homeClick(){
+                this.countDown = 0
+            },
             loadFinalScore() {
       const finalScore = localStorage.getItem('finalScore');
       if (finalScore) {
