@@ -25,15 +25,14 @@
                 <!-- <pre>{{ gareth }}</pre> -->
                 <p v-html="gareth"></p>
             </div>
-  
-
-    </div>
-    <div>
+    <div class="buttons">
         <a @click="backButton" :disabled="total > 0" class="back" href="#" >&laquo; Back</a>
         <a @click="nextButton" :disabled="total < 19" class="back" href="#">Next &raquo;</a>
-        <!-- <p>Total: {{ total }}</p> -->
 
     </div>
+
+    </div>
+   
 
 
 </template>
@@ -220,7 +219,7 @@ import { useStore } from 'vuex';
 }
 
 .container {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: 60vh;
