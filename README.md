@@ -1,4 +1,5 @@
 # football career game
+<p>I love quizzes that have a football career path questions so I made an up app for such questions!</p>
 
 <p>A guessing game whereby users have to guess the soccer players names based on their career path. The user has 90 seconds to get as many players names as possible.</p>
 
