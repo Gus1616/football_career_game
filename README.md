@@ -26,4 +26,13 @@
 
 
 
-![image](https://github.com/Gus1616/football_career_game/assets/90276026/e196876a-73ec-4a12-8eac-f86ea9168922)
+![image](https://github.com/Gus1616/football_career_game/assets/90276026/a2f9791e-ec22-45a7-9e79-15d64d986390)
+
+<p>Future Ideas:</p>
+
+
+<p>- Mobile Version</p>
+<p>- Add more players</p>
+<p>- Host Application</p>
+
+
